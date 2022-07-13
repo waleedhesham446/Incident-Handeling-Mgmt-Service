@@ -1,0 +1,14 @@
+<h1 mat-dialog-title>Add Admin</h1>
+<div mat-dialog-content>
+  <mat-form-field appearance="fill">
+    <mat-label>Admin username</mat-label>
+    <input matInput [(ngModel)]="data.username">
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Admin password</mat-label>
+    <input matInput [(ngModel)]="data.password">
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button [mat-dialog-close]="data" color="primary" disabled="{{data.password.length < 4 || !data.username}}">Add</button>
+</div>

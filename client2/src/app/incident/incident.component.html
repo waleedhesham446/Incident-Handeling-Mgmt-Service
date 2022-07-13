@@ -1,0 +1,11 @@
+<a routerLink="/incident/{{incident.id}}" style="text-decoration: none;">
+    <mat-card>
+        <h1 class="title">{{incident.title}}</h1>
+        <p>{{incident.description | sliceWords:0:10}}</p>
+        <div class="status-username-box">
+            <span [ngStyle]="{'border-color': statusColorsMap[incident.status]}" class="status">{{incident.status}}</span>
+            <h3 *ngIf="incident.userName != ''" class="username">{{incident.userName}}</h3>
+        </div>
+        <p>Last Updat at: <Strong>{{incident.updated | date : 'short'}}</Strong></p>
+    </mat-card>
+</a>

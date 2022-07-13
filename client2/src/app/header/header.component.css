@@ -1,0 +1,14 @@
+img {
+    max-width: 180px;
+    cursor: pointer;
+}
+
+mat-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+button {
+    margin: 10px;
+}

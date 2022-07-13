@@ -1,0 +1,83 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: space-between; */
+    height: 100%;
+}
+
+header {
+    align-self: stretch;
+    margin: 20px;
+}
+
+.title {
+    font-weight: bold;
+    margin: 30px;
+}
+
+.description-box, .comment-box {
+    align-self: flex-start;
+    margin: 30px;
+}
+
+.description, .comment {
+    font-size: 1.3em;
+}
+
+.assignable {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.selectUserForm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.selectUserForm * {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.username {
+    font-size: 1.3em;
+}
+
+.admin-control {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.user-control {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.solve {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.loading-spinner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.incident-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}

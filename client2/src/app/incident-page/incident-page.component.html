@@ -1,0 +1,47 @@
+<header>
+    <app-header></app-header>
+</header>
+<div class="loading-spinner" *ngIf="loading">
+    <mat-spinner></mat-spinner>
+</div>
+<div *ngIf="!loading" class="incident-box">
+    <h1 class="title">{{incident.title}}</h1>
+    <div class="description-box">
+        <h2>Description:</h2>
+        <p class="description">{{incident.description}}</p>
+    </div>
+    <p>
+        {{incident.status}}: <strong *ngIf="incident.userName != ''" class="username">{{incident.userName}}</strong>
+    </p>
+    <div *ngIf="incident.comment" class="comment-box">
+        <h2>Solution Notes:</h2>
+        <p class="comment">{{incident.comment}}</p>
+    </div>
+    <div *ngIf="isAdmin" class="admin-control">
+        <div *ngIf="assignable" class="assignable">
+            <h3>Assign to User</h3>
+            <form class="selectUserForm" (ngSubmit)="assignIncident()">
+                <mat-form-field appearance="fill">
+                  <mat-label>Select username</mat-label>
+                  <select matNativeControl id="mySelectId" [formControl]="usernameFormControl">
+                    <option value="" disabled selected></option>
+                    <option *ngFor="let name of usernames" value="{{name.id}}">{{name.name}}</option>
+                  </select>
+                </mat-form-field>
+                <button type="submit" mat-raised-button color="primary" disabled="{{!usernameFormControl.value}}">Assign</button>
+            </form>
+        </div>
+        <button mat-raised-button color="warn" style="margin-top: 40px;" (click)="deleteIncident()">Delete</button>
+    </div>
+    
+    <div *ngIf="!isAdmin" class="user-control">
+        <button *ngIf="acknowledgable" mat-raised-button color="primary" style="margin-top: 40px;" (click)="acknowledge()">Acknowledge</button>
+        <form *ngIf="resolvable" class="solve" (ngSubmit)="resolve()">
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Leave a comment</mat-label>
+                <textarea matInput placeholder="Ex. It makes me feel..." [formControl]="commentFormControl"></textarea>
+            </mat-form-field>
+            <button type="submit" mat-raised-button color="accent">Resolve</button>
+        </form>
+    </div>
+</div>

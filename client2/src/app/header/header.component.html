@@ -1,0 +1,7 @@
+<mat-card>
+    <img (click)="goHome()" src="/assets/logo.png" alt="logo" class="logo">
+    <div *ngIf="isAdmin" class="admin-control-box">
+        <button mat-raised-button color="primary" (click)="openIncidentDialog()">Add Incident</button>
+        <button mat-raised-button color="accent" (click)="openAdminDialog()">Add Admin</button>
+    </div>
+</mat-card>

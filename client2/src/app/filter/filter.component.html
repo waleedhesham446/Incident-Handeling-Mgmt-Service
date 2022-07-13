@@ -1,0 +1,35 @@
+<mat-card>
+    <form class="example-form" (ngSubmit)="onSubmit()">
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Title</mat-label>
+          <input type="text" matInput [formControl]="titleFormControl" placeholder="Enter Title to Search for">
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Description</mat-label>
+          <input type="text" matInput [formControl]="descriptionFormControl" placeholder="Enter Description to Search for">
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Username</mat-label>
+          <input type="text" matInput [formControl]="usernameFormControl" placeholder="Enter Username to Search for">
+        </mat-form-field>
+
+        <mat-label id="status-label">Status</mat-label>
+        <mat-radio-group color="primary" [formControl]="statusFormControl" aria-label="Select an option">
+          <mat-radio-button value="Not Assigned">Not Assigned</mat-radio-button>
+          <mat-radio-button value="Assigned">Assigned</mat-radio-button>
+          <mat-radio-button value="Acknowledged">Acknowledged</mat-radio-button>
+          <mat-radio-button value="Resolved">Resolved</mat-radio-button>
+          <mat-radio-button value="All">All</mat-radio-button>
+        </mat-radio-group>
+
+        <mat-label id="order-label">Order</mat-label>
+        <mat-radio-group color="primary" [formControl]="orderFormControl" aria-label="Select an option">
+          <mat-radio-button value="-1">Latest</mat-radio-button>
+          <mat-radio-button value="1">Oldest</mat-radio-button>
+        </mat-radio-group>
+    
+        <button type="submit" mat-raised-button color="primary">Filter</button>
+    </form>
+</mat-card>
